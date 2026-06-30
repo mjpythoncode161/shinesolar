@@ -3,15 +3,18 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-zfv57_jrm!7$mc8*_1j-ryq%u+y!o-!pda)2min5qrti#vuh#o'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-zfv57_jrm!7$mc8*_1j-ryq%u+y!o-!pda)2min5qrti#vuh#o',
+)
 
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
-    "*"
-    "shinesolar.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    'shinesolar.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',
 ]
 
 INSTALLED_APPS = [
@@ -23,7 +26,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website',
     'products_brands_app',
-    "https://shinesolar.onrender.com"
 ]
 
 
@@ -36,6 +38,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

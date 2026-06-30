@@ -15,7 +15,6 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.onrender.com',
-    'https://shinesolar.onrender.com',
 ]
 
 INSTALLED_APPS = [
@@ -28,8 +27,6 @@ INSTALLED_APPS = [
     'website',
     'products_brands_app',
 ]
-
-
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -87,8 +84,16 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'website' / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+    },
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

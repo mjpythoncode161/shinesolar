@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 Projects | Shine Solar Energy
@@ -24,19 +25,19 @@ Projects | Shine Solar Energy
         <div class="cards">
 
             <div class="card">
-                <img src="/static/images/project1.jpg" width="100%">
+                <img src="{% static 'images/project1.jpg' %}" width="100%">
                 <h3>Residential Project</h3>
                 <p>5KW Rooftop Solar Installation.</p>
             </div>
 
             <div class="card">
-                <img src="/static/images/project2.jpg" width="100%">
+                <img src="{% static 'images/project2.jpg' %}" width="100%">
                 <h3>Commercial Project</h3>
                 <p>50KW Commercial Solar Plant.</p>
             </div>
 
             <div class="card">
-                <img src="/static/images/project3.jpg" width="100%">
+                <img src="{% static 'images/project3.jpg' %}" width="100%">
                 <h3>Industrial Project</h3>
                 <p>250KW Industrial Solar System.</p>
             </div>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
 About Us | Shine Solar Energy
@@ -81,7 +82,7 @@ About Us | Shine Solar Energy
         <div class="founder-container">
 
             <div class="founder-image">
-                <img src="/static/images/founder.jpg" alt="Founder">
+                <img src="{% static 'images/founder.jpg' %}" alt="Founder">
             </div>
 
             <div class="founder-content">

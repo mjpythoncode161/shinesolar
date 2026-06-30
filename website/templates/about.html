@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Us | Shine Solar Energy
+{% endblock %}
+
+{% block content %}
+
+<section class="page-banner">
+    <div class="container">
+        <h1>About Shine Solar Energy</h1>
+        <p>Powering a Cleaner and Brighter Future</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Who We Are</h2>
+        </div>
+
+        <p>
+            Shine Solar Energy is a trusted solar energy company dedicated
+            to providing reliable, efficient and sustainable solar solutions.
+            We help homes, businesses and industries switch to clean energy
+            while reducing electricity costs.
+        </p>
+
+        <br>
+
+        <p>
+            With advanced solar technology, quality products and professional
+            installation, we deliver solutions that create long-term value
+            for our customers.
+        </p>
+
+    </div>
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Our Mission</h3>
+
+                <p>
+                    To make renewable energy accessible to everyone through
+                    affordable and efficient solar solutions.
+                </p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-eye"></i>
+                <h3>Our Vision</h3>
+
+                <p>
+                    To become a leading solar energy provider and contribute
+                    towards a greener future.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Meet Our Founder</h2>
+        </div>
+
+        <div class="founder-container">
+
+            <div class="founder-image">
+                <img src="/static/images/founder.jpg" alt="Founder">
+            </div>
+
+            <div class="founder-content">
+
+                <h3>Mr. Owner Name</h3>
+
+                <h4>Founder & Director</h4>
+
+                <br>
+
+                <p>
+                    With a passion for renewable energy and innovation,
+                    Mr. Owner Name started Shine Solar Energy with a vision
+                    to provide dependable solar solutions.
+                </p>
+
+                <br>
+
+                <ul>
+                    <li>✔ Solar Energy Solutions</li>
+                    <li>✔ Project Management</li>
+                    <li>✔ Customer Service</li>
+                    <li>✔ Renewable Energy Development</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Values</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Quality</h3>
+                <p>Delivering reliable solar solutions.</p>
+            </div>
+
+            <div class="card">
+                <h3>Trust</h3>
+                <p>Building long-term customer relationships.</p>
+            </div>
+
+            <div class="card">
+                <h3>Innovation</h3>
+                <p>Using modern solar technology.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sustainability</h3>
+                <p>Protecting the environment.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Ready To Switch To Solar?</h2>
+
+        <p>
+            Get a customized solar solution and start saving today.
+        </p>
+
+        <a href="{% url 'contact' %}" class="btn btn-primary">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Solar Blog | Shine Solar Energy{% endblock %}
+
+{% block content %}
+
+<section class="page-banner">
+  <div class="container">
+    <h1>Solar Blog</h1>
+    <p>Latest Solar Energy News, Tips & Updates</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="label">Knowledge Hub</span>
+      <h2>Latest Articles</h2>
+      <p>Stay informed about solar energy, government subsidies, and maintenance tips.</p>
+    </div>
+
+    <div class="cards reveal">
+      {% for post in posts %}
+      <div class="card" style="padding:0;overflow:hidden;display:flex;flex-direction:column;">
+        {% if post.image %}
+        <div style="height:180px;overflow:hidden;">
+          <img src="{{ post.image.url }}" alt="{{ post.title }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        {% else %}
+        <div style="height:120px;background:linear-gradient(135deg,#071829,#143C6A);display:flex;align-items:center;justify-content:center;">
+          <i class="fas fa-sun" style="font-size:40px;color:rgba(244,180,0,.6);"></i>
+        </div>
+        {% endif %}
+        <div style="padding:22px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-size:11px;color:#94a3b8;margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;">
+            <i class="fas fa-calendar-alt" style="margin-right:5px;"></i>{{ post.created_at|date:"d M Y" }}
+          </div>
+          <h3 style="font-size:18px;margin:0 0 10px;color:#1e293b;">{{ post.title }}</h3>
+          {% if post.excerpt %}
+          <p style="color:#64748b;font-size:14px;flex:1;margin:0 0 16px;">{{ post.excerpt }}</p>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+      <!-- Fallback static cards when no DB posts exist -->
+      <div class="card">
+        <i class="fas fa-sun"></i>
+        <h3>Benefits of Solar Energy</h3>
+        <p>Learn how solar energy can reduce your electricity bills by up to 80% and earn returns in 3–5 years.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-rupee-sign"></i>
+        <h3>Government Subsidies</h3>
+        <p>Explore available MNRE solar subsidy programs and how Shine Solar helps you claim them hassle-free.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-wrench"></i>
+        <h3>Solar Maintenance Tips</h3>
+        <p>Keep your solar system performing at peak efficiency with these simple maintenance best practices.</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -8,7 +8,8 @@ SECRET_KEY = 'django-insecure-zfv57_jrm!7$mc8*_1j-ryq%u+y!o-!pda)2min5qrti#vuh#o
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://shinesolar.onrender.com",
+    "*"
+    "shinesolar.onrender.com",
     "localhost",
     "127.0.0.1",
 ]

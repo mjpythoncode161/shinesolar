@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -o errexit
 
-pip install -r requirements.txt
-pip install gunicorn whitenoise
+cd "$(dirname "$0")"
 
-exec gunicorn shinesolar.wsgi:application --bind "0.0.0.0:${PORT:-8000}"
+pip install -r requirements.txt
+python manage.py collectstatic --no-input
+python manage.py migrate --no-input
+
+exec gunicorn shinesolar.wsgi:application --bind "0.0.0.0:${PORT:-10000}"

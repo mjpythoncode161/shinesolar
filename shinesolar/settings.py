@@ -1,5 +1,4 @@
 from pathlib import Path
-import importlib.util
 import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,12 +28,9 @@ INSTALLED_APPS = [
     'products_brands_app',
 ]
 
-
 CSRF_TRUSTED_ORIGINS = [
-    "https://shinesolar.onrender.com",
+    'https://shinesolar.onrender.com',
 ]
-
-HAS_WHITENOISE = importlib.util.find_spec('whitenoise') is not None
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -45,9 +41,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-if HAS_WHITENOISE:
-    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
 
 ROOT_URLCONF = 'shinesolar.urls'
 
@@ -89,19 +82,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STORAGES = {
-    'default': {
-        'BACKEND': 'django.core.files.storage.FileSystemStorage',
-    },
-    'staticfiles': {
-        'BACKEND': (
-            'whitenoise.storage.CompressedStaticFilesStorage'
-            if HAS_WHITENOISE
-            else 'django.contrib.staticfiles.storage.StaticFilesStorage'
-        ),
-    },
-}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'

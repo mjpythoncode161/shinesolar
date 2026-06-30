@@ -7,7 +7,11 @@ SECRET_KEY = 'django-insecure-zfv57_jrm!7$mc8*_1j-ryq%u+y!o-!pda)2min5qrti#vuh#o
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "https://shinesolar.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,8 +24,6 @@ INSTALLED_APPS = [
     'products_brands_app',
     "https://shinesolar.onrender.com"
 ]
-
-
 
 
 
